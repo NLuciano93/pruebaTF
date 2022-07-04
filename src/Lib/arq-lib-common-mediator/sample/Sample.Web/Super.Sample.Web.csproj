@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\arq-lib-common-mediator\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Behaviors.ResponseCaching" Version="1.0.1" />
+    <PackageReference Include="Fusap.Common.Hosting.WebApi" Version="1.0.44" />
+    <PackageReference Include="Fusap.Common.Model.Presenter.WebApi" Version="1.0.13" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\arq-lib-common-mediatorcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Fusap.Common.Mediator.Authorization\Fusap.Common.Mediator.Authorization.csproj" />
+    <ProjectReference Include="..\..\src\Fusap.Common.Mediator.FluentValidation\Fusap.Common.Mediator.FluentValidation.csproj" />
+    <ProjectReference Include="..\..\src\Fusap.Common.Mediator\Fusap.Common.Mediator.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,785 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Example Api",
+    "description": "Some description here\n\nThis Api is intended for private consumption over dedicated links.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost"
+    }
+  ],
+  "paths": {
+    "/v1/WeatherForecast": {
+      "post": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "An obsolete endpoint",
+        "operationId": "ObsoleteAction",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "patch": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "A patch operation",
+        "operationId": "custom-operation-id",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EarthForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EarthForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EarthForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "A delete endpoint",
+        "operationId": "delete-override",
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EarthForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EarthForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EarthForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/WeatherForecast/action-secured-with-api-key-scheme": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "An action that is secured with api key",
+        "operationId": "ActionSecuredWithApiKeyScheme",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/WeatherForecast/action-secured-with-basic-http-scheme": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "An action that is secured with basic scheme",
+        "operationId": "ActionSecuredWithBasicHttpScheme",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Http": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/WeatherForecast/action-with-custom-response-headers": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "An action with custom headers",
+        "operationId": "ActionWithCustomResponseHeaders",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {
+              "x-test-number": {
+                "description": "Test number header",
+                "schema": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Success",
+            "headers": {
+              "x-test-string": {
+                "description": "Test string header",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/WeatherForecast/action-with-oauth2-scheme": {
+      "put": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "An action that is secured with OAuth2",
+        "operationId": "ActionSecuredWithOAuth2Scheme",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/EarthForecast"
+                      },
+                      {
+                        "$ref": "#/components/schemas/MarsForecast"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/WeatherForecast/action-with-paginated-response": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "A paginated action",
+        "operationId": "ActionWithPagination",
+        "parameters": [
+          {
+            "name": "x-pageNumber",
+            "in": "header",
+            "description": "The page number",
+            "schema": {
+              "type": "integer",
+              "description": "The page number",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-pageSize",
+            "in": "header",
+            "description": "The page size",
+            "schema": {
+              "type": "integer",
+              "description": "The page size",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {
+              "X-pageNumber": {
+                "description": "Current page",
+                "schema": {
+                  "type": "number"
+                }
+              },
+              "X-pageSize": {
+                "description": "Total pages",
+                "schema": {
+                  "type": "number"
+                }
+              },
+              "X-totalCount": {
+                "description": "Total records count",
+                "schema": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/WeatherForecast/test": {
+      "post": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "Another action",
+        "operationId": "OtherAction",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/MarsForecast"
+                  }
+                ],
+                "description": ""
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/MarsForecast"
+                  }
+                ],
+                "description": ""
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/MarsForecast"
+                  }
+                ],
+                "description": ""
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MarsForecast": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Forecast"
+          }
+        ],
+        "properties": {
+          "sandStormProbability": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WindDirection": {
+        "enum": [
+          "North",
+          "South",
+          "East",
+          "West"
+        ],
+        "type": "string"
+      },
+      "Forecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "temperatureC": {
+            "type": "number",
+            "description": "The temperature measured in Celsius",
+            "format": "decimal"
+          },
+          "windDirection": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WindDirection"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "EarthForecast": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Forecast"
+          }
+        ],
+        "properties": {
+          "temperatureF": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "optionalSummary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValidationProblemDetails": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ProblemDetails"
+          }
+        ],
+        "properties": {
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "readOnly": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string"
+          },
+          "instance": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      }
+    },
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "oauth2",
+        "description": "OAuth 2.0 with Client Credentials Grant type",
+        "flows": {
+          "password": {
+            "authorizationUrl": "http://dev.fusapdigital.com/auth/realms/zendesk/protocol/openid-connect/token",
+            "tokenUrl": "http://dev.fusapdigital.com/auth/realms/zendesk/protocol/openid-connect/token",
+            "scopes": { }
+          }
+        }
+      },
+      "Http": {
+        "type": "http",
+        "scheme": "basic"
+      },
+      "ApiKey": {
+        "type": "apiKey",
+        "description": "Api Key based auth",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

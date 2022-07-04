@@ -1,0 +1,4031 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Fusap.TimeSheet Service",
+    "description": "REST Api Fusap.TimeSheet Service\n\nThis Api is intended for private consumption over dedicated links.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost"
+    }
+  ],
+  "paths": {
+    "/v1/descriptiontb": {
+      "get": {
+        "tags": [
+          "DescriptionTb"
+        ],
+        "summary": "Get Description Tb by ProyectId and TimeSheetMasterId",
+        "operationId": "GetDescriptionTb",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "description": "ProjectId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "timeSheetMasterId",
+            "in": "query",
+            "description": "TimeSheetMasterId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok: indicates that the request has succeeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.DescriptionTbResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "DescriptionTb"
+        ],
+        "summary": "Add DescriptionTb",
+        "operationId": "AddDescriptionTb",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.DescriptionTb.V1.Insert.AddDescriptionTbRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.DescriptionTbIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/expenses": {
+      "get": {
+        "tags": [
+          "Expenses"
+        ],
+        "summary": "Get Expense Audit Count By AdminId",
+        "operationId": "GetExpesesCountByAdminId",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ExpenseDisplayViewResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Expenses"
+        ],
+        "summary": "Add Expenses",
+        "operationId": "AddExpense",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Expenses.V1.Insert.AddExpenseRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ExpenseIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/expenses/check-project-exists-in-expense": {
+      "get": {
+        "tags": [
+          "Expenses"
+        ],
+        "summary": "Check ProjectId exists in Expense",
+        "operationId": "CheckProjectIdExistsInExpense",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "description": "ProjectId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/notificationstb": {
+      "get": {
+        "tags": [
+          "NotificationsTb"
+        ],
+        "summary": "Show NotificationsTb",
+        "operationId": "ShowNotificationsTb",
+        "parameters": [
+          {
+            "name": "message",
+            "in": "query",
+            "description": "Message",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "description": "Sort Column",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "description": "Sort Direction",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.NotificationTbResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "NotificationsTb"
+        ],
+        "summary": "Add NotificationTb",
+        "operationId": "AddNotificationsTb",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.NotificationsTb.V1.Insert.AddNotificationsTbRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.NotificationsTbIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/notificationstb/{notificationId}/desactivate-notification-by-id": {
+      "post": {
+        "tags": [
+          "NotificationsTb"
+        ],
+        "summary": "Desactivate Notification by Id",
+        "operationId": "DeActivateNotificationById",
+        "parameters": [
+          {
+            "name": "notificationId",
+            "in": "path",
+            "description": "NotificationId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/notificationstb/disable-existing-notification": {
+      "post": {
+        "tags": [
+          "NotificationsTb"
+        ],
+        "summary": "Disable Existing Notification",
+        "operationId": "DisableExistingNotifications",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Show all Projects",
+        "operationId": "ShowAllProjects",
+        "parameters": [
+          {
+            "name": "projectCode",
+            "in": "query",
+            "description": "Project Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectName",
+            "in": "query",
+            "description": "Project Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "description": "Sort Column",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "description": "Sort Direction",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectMasterResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Add Project Master",
+        "operationId": "AddProjectMaster",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AddProjectMasterRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/{projectId}": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Get Project Master by Id",
+        "operationId": "GetProjectMasterById",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "ProjectId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectMasterResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Delete Project Master",
+        "operationId": "DeleteProjectMaster",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "ProjectId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "default": {
+            "description": "Error"
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/{projectId}/assign-project-to-users": {
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Assign Project to Users",
+        "operationId": "AssignProjectToUsers",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "ProjectId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AssignProjectToUsersInput"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/check-project-code-exist": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Check is projectCode exists",
+        "operationId": "CheckProjectCodeExists",
+        "parameters": [
+          {
+            "name": "projectCode",
+            "in": "query",
+            "description": "ProjectCode",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/check-project-name-exist": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Check is projectName exists",
+        "operationId": "CheckProjectNameExists",
+        "parameters": [
+          {
+            "name": "projectName",
+            "in": "query",
+            "description": "ProjectName",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/list-of-projects": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Get List of Proyects",
+        "operationId": "GetListOfProyects",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/list-of-projects-by-user": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Get list of Projects by User",
+        "operationId": "GetListofProjectsByUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "UserId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectListResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/list-of-projects-by-user-admin": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Get list of Projects by UserAdmin",
+        "operationId": "GetListofProjectsByUserAdmin",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "UserId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectListResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/project-name-by-id": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Get project name by Id",
+        "operationId": "GetProjectNameById",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "description": "ProjectId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/projects/total-projects-count": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Get total projects counts",
+        "operationId": "GetTotalProjectsCounts",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/registrations": {
+      "post": {
+        "tags": [
+          "Registrations"
+        ],
+        "summary": "Add Registration",
+        "operationId": "AddRegistration",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Registrations.V1.Insert.AddRegistrationRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/registrations/{registrationId}/change-password": {
+      "post": {
+        "tags": [
+          "Registrations"
+        ],
+        "summary": "Change Password",
+        "operationId": "ChangePassword",
+        "parameters": [
+          {
+            "name": "registrationId",
+            "in": "path",
+            "description": "RegistrationId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New Password",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.ChangePasswordInput"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/registrations/{registrationId}/update-password": {
+      "post": {
+        "tags": [
+          "Registrations"
+        ],
+        "summary": "Update Password",
+        "operationId": "UpdatePassword",
+        "parameters": [
+          {
+            "name": "registrationId",
+            "in": "path",
+            "description": "RegistrationId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New Password",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.UpdatePasswordInput"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "default": {
+            "description": "Error"
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/registrations/registrationid-by-username": {
+      "get": {
+        "tags": [
+          "Registrations"
+        ],
+        "summary": "Get RegistrationId by Registration Username",
+        "operationId": "GetRegistrationIdByUsername",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "UserName",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/roles": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Get Assigned Roles",
+        "operationId": "GetAssignedRoles",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.AssignedRolesResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Assign Roles",
+        "operationId": "AssignRoles",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Roles.V1.Insert.AssignRolesRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/roles/roleid-by-rolename": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Get RoleId by Rolename",
+        "operationId": "GetRoleIdbyRolename",
+        "parameters": [
+          {
+            "name": "roleName",
+            "in": "query",
+            "description": "RoleName",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheetaudittb": {
+      "post": {
+        "tags": [
+          "TimeSheetAuditTb"
+        ],
+        "summary": "Insert TimeSheet Audit",
+        "operationId": "InsertTimeSheetAuditLog",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.TimeSheetAuditTb.Insert.InsertTimeSheetAuditLogRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.InsertTimeSheetAuditLogIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheetdetails": {
+      "post": {
+        "tags": [
+          "TimeSheetDetails"
+        ],
+        "summary": "Add TimeSheetDetails",
+        "operationId": "AddTimeSheetDetails",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.TimeSheetDetails.V1.Insert.AddTimeSheetDetailRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetDetailsIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheetdetails/check-date-is-alredy-used": {
+      "get": {
+        "tags": [
+          "TimeSheetDetails"
+        ],
+        "summary": "Check is date alrady used",
+        "operationId": "GetUsersDateIsUsed",
+        "parameters": [
+          {
+            "name": "period",
+            "in": "query",
+            "description": "Date",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "User Id",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UserDateIsUsedResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheetdetails/check-project-exists-in-timesheet": {
+      "get": {
+        "tags": [
+          "TimeSheetDetails"
+        ],
+        "summary": "Check ProjectId exists in TimeSheet",
+        "operationId": "CheckProjectIdExistsInTimeSheet",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "description": "ProjectId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheetexport": {
+      "post": {
+        "tags": [
+          "TimeSheetExport"
+        ],
+        "summary": "Export a global timesheet from specific month and year",
+        "operationId": "ExportTimeSheet",
+        "requestBody": {
+          "description": "Period",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.TimeSheetExportGlobal.V1.Export.ExportGlobalTimeSheetRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ok: indicates that the request has succeeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ExportGlobalTimeSheetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheets": {
+      "post": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Add TimeSheetMaster",
+        "operationId": "AddTimeSheetMaster",
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.TimeSheets.V1.Insert.AddTimeSheetMasterRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetMasterIdResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          },
+          "201": {
+            "description": "Created: indicates that the request has succeeded and has led to the creation of a resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheets/{timeSheetMasterId}": {
+      "get": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Get TimeSheetMaster by Id",
+        "operationId": "GetTimeSheetMasterById",
+        "parameters": [
+          {
+            "name": "timeSheetMasterId",
+            "in": "path",
+            "description": "TimeSheetMasterId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetMasterResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Update TimeSheetMaster",
+        "operationId": "UpdateTimeSheetMaster",
+        "parameters": [
+          {
+            "name": "timeSheetMasterId",
+            "in": "path",
+            "description": "TimeSheetMasterId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Input",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.UpdateTimeSheetMasterInput"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "default": {
+            "description": "Error"
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Delete TimeSheetMaster",
+        "operationId": "DeleteTimeSheetMaster",
+        "parameters": [
+          {
+            "name": "timeSheetMasterId",
+            "in": "path",
+            "description": "TimeSheetMasterId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "UserId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheets/{timeSheetMasterId}/update-status": {
+      "post": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Update TimeSheet Status",
+        "operationId": "UpdateTimeSheetStatus",
+        "parameters": [
+          {
+            "name": "timeSheetMasterId",
+            "in": "path",
+            "description": "TimeSheetMasterId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New TimeSheet Status",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.UpdateTimeSheetStatusInput"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "default": {
+            "description": "Error"
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheets/all-timesheets": {
+      "get": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Show all TimeSheets",
+        "operationId": "ShowAllTimeSheets",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "UserId",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "timeSheetStatus",
+            "in": "query",
+            "description": "TimeSheetStatus",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "description": "Sort Column",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "description": "Sort Direction",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetMasterResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheets/count-by-adminid": {
+      "get": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Get TimeSheetsCount by AdminId",
+        "operationId": "GetTimeSheetsCountByAdminIdAsyn",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetDisplayViewResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/timesheets/count-by-userid": {
+      "get": {
+        "tags": [
+          "TimeSheets"
+        ],
+        "summary": "Get TimeSheetsCount by UserId",
+        "operationId": "GetTimeSheetsCountByUserId",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetDisplayViewResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/token": {
+      "get": {
+        "tags": [
+          "Token"
+        ],
+        "summary": "Get user detail",
+        "operationId": "Get",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UserDetailResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Token"
+        ],
+        "summary": "Generate Token",
+        "operationId": "GenerateToken",
+        "requestBody": {
+          "description": "Username Password",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Token.V1.GenerateToken.GenerateTokenRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Token.V1.GenerateToken.LoginResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/users/{registrationId}/admin": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get Admin details by RegistrationId",
+        "operationId": "GetAdminDetailsByRegistrationId",
+        "parameters": [
+          {
+            "name": "registrationId",
+            "in": "path",
+            "description": "RegistrationId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationViewDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/users/{registrationId}/user": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get User details by RegistrationId",
+        "operationId": "GetUserDetailsByRegistrationId",
+        "parameters": [
+          {
+            "name": "registrationId",
+            "in": "path",
+            "description": "RegistrationId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found: indicates that the server can't find the requested resource."
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationViewDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error"
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/users/all-admins": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Show all Admins",
+        "operationId": "ShowAllAdmins",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "description": "Sort Column",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "description": "Sort Direction",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationSummaryResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/users/all-users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Show all Users",
+        "operationId": "ShowAllUsers",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "description": "Sort Column",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "description": "Sort Direction",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationSummaryResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/users/total-admins-count": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get Total Admins Count",
+        "operationId": "GetTotalAdminsCount",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/users/total-users-count": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get Total Users Count",
+        "operationId": "GetTotalUsersCount",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/users/users-hours-no-complete": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get Users hours no complete",
+        "operationId": "GetUsersHoursNoComplete",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Date",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "description": "Sort Column",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "description": "Sort Direction",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UsersHoursNoCompleteResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/v1/users/users-under-admin": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Show all Users under Admin",
+        "operationId": "ShowAllUsersUnderAdmin",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "description": "Sort Column",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "description": "Sort Direction",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationSummaryResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: indicates that the server cannot or will not process the request due to something that is perceived to be a client error."
+          },
+          "401": {
+            "description": "Unauthorized: indicates that the requested resource requires authentication."
+          },
+          "403": {
+            "description": "Forbidden: indicates that the server refuses to fulfill the request."
+          },
+          "422": {
+            "description": "Unprocessable Entity: indicates that the request was well-formed but was unable to be followed due to semantic errors."
+          }
+        },
+        "security": [
+          {
+            "ApiKey": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.NotificationTbResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "estimatedCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.NotificationTbResponse"
+            },
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectMasterResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "estimatedCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectMasterResponse"
+            },
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationSummaryResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "estimatedCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationSummaryResponse"
+            },
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetMasterResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "estimatedCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetMasterResponse"
+            },
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.Common.Model.Pagination`1[[Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UsersHoursNoCompleteResponse, Fusap.TimeSheet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "estimatedCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UsersHoursNoCompleteResponse"
+            },
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.Common.Model.Presenter.WebApi.ApiError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The general error code.",
+            "example": "ERR-CODE"
+          },
+          "id": {
+            "type": "string",
+            "description": "The trace id for this operation.",
+            "example": "75c0e295a3c74e888f800292f1abeea9"
+          },
+          "message": {
+            "type": "string",
+            "description": "A general description of what happened.",
+            "example": "General error message"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail"
+            },
+            "description": "A detailed list of errors."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Indicates that an error happened while processing the request."
+      },
+      "Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "description": "The specific error code.",
+            "example": "ERR-CODE-XXX"
+          },
+          "message": {
+            "type": "string",
+            "description": "The specific error message.",
+            "example": "Error message"
+          },
+          "path": {
+            "type": "string",
+            "description": "A path that further qualifies this issue.",
+            "nullable": true,
+            "example": ""
+          },
+          "url": {
+            "type": "string",
+            "description": "An url that further qualifies this issue.",
+            "nullable": true,
+            "example": "https://example.com/errors/err-code-xxx"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.Common.Model.Presenter.WebApi.ApiErrorDetailProperty"
+            },
+            "description": "A list of properties that can convey extra information to the caller.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Indicates details about an error."
+      },
+      "Fusap.Common.Model.Presenter.WebApi.ApiErrorDetailProperty": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The property key.",
+            "nullable": true,
+            "readOnly": true,
+            "example": ""
+          },
+          "value": {
+            "type": "string",
+            "description": "The property value.",
+            "nullable": true,
+            "readOnly": true,
+            "example": ""
+          }
+        },
+        "additionalProperties": false,
+        "description": "A property that can convey extra information when an error happen."
+      },
+      "Fusap.TimeSheet.Application.UseCases.DescriptionTb.V1.Insert.AddDescriptionTbRequest": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeSheetMasterId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Expenses.V1.Insert.AddExpenseRequest": {
+        "type": "object",
+        "properties": {
+          "purposeorReason": {
+            "type": "string"
+          },
+          "expenseStatus": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fromDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "voucherId": {
+            "type": "string",
+            "nullable": true
+          },
+          "hotelBills": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "travelBills": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "mealsBills": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "landLineBills": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "transportBills": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "mobileBills": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "miscellaneous": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "projectId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.NotificationsTb.V1.Insert.AddNotificationsTbRequest": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fromDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AddProjectMasterRequest": {
+        "type": "object",
+        "properties": {
+          "projectCode": {
+            "type": "string"
+          },
+          "natureofIndustry": {
+            "type": "string"
+          },
+          "projectName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AssignProjectToUsersInput": {
+        "type": "object",
+        "properties": {
+          "listOfProjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AssignProjectToUsersInput+ProjectModel"
+            }
+          },
+          "listOfUsers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AssignProjectToUsersInput+UserProjectModel"
+            }
+          },
+          "registrationId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AssignProjectToUsersInput+ProjectModel": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          },
+          "projectName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Projects.V1.Insert.AssignProjectToUsersInput+UserProjectModel": {
+        "type": "object",
+        "properties": {
+          "registrationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "selectedUsers": {
+            "type": "boolean"
+          },
+          "assignToProject": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Registrations.V1.Insert.AddRegistrationRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "mobileno": {
+            "type": "string"
+          },
+          "emailId": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "confirmPassword": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "birthdate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "roles": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.DataTranferObject.EnabledRoles"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Roles.V1.Insert.AssignRolesRequest": {
+        "type": "object",
+        "properties": {
+          "registrationID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "listOfUsers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Application.UseCases.Roles.V1.Insert.AssignRolesRequest+UserModel"
+            }
+          },
+          "createdBy": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Roles.V1.Insert.AssignRolesRequest+UserModel": {
+        "type": "object",
+        "properties": {
+          "registrationID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "selectedUsers": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.TimeSheetAuditTb.Insert.InsertTimeSheetAuditLogRequest": {
+        "type": "object",
+        "properties": {
+          "approvalUser": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "processedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeSheetId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.TimeSheetDetails.V1.Insert.AddTimeSheetDetailRequest": {
+        "type": "object",
+        "properties": {
+          "daysofWeek": {
+            "type": "string",
+            "nullable": true
+          },
+          "hours": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "projectId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeSheetMasterId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalHours": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.TimeSheetExportGlobal.V1.Export.ExportGlobalTimeSheetRequest": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.TimeSheets.V1.Insert.AddTimeSheetMasterRequest": {
+        "type": "object",
+        "properties": {
+          "fromDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "totalHours": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeSheetStatus": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Token.V1.GenerateToken.GenerateTokenRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Application.UseCases.Token.V1.GenerateToken.LoginResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          },
+          "expires": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.DataTranferObject.EnabledRoles": {
+        "enum": [
+          "Leader",
+          "User",
+          "SuperAdmin"
+        ],
+        "type": "string"
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.ChangePasswordInput": {
+        "type": "object",
+        "properties": {
+          "oldPassword": {
+            "type": "string"
+          },
+          "newPassword": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.UpdatePasswordInput": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.UpdateTimeSheetMasterInput": {
+        "type": "object",
+        "properties": {
+          "totalHours": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Input.UpdateTimeSheetStatusInput": {
+        "type": "object",
+        "properties": {
+          "timeSheetStatus": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.AssignedRolesResponse": {
+        "type": "object",
+        "properties": {
+          "listofAdmins": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.AssignedRolesResponse+AdminModel"
+            }
+          },
+          "listofUser": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.AssignedRolesResponse+UserModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.AssignedRolesResponse+AdminModel": {
+        "type": "object",
+        "properties": {
+          "registrationID": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.AssignedRolesResponse+UserModel": {
+        "type": "object",
+        "properties": {
+          "registrationID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "selectedUsers": {
+            "type": "boolean"
+          },
+          "assignToAdmin": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.DescriptionTbIdResponse": {
+        "type": "object",
+        "properties": {
+          "descriptionId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.DescriptionTbResponse": {
+        "type": "object",
+        "properties": {
+          "descriptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeSheetMasterId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ExpenseDisplayViewResponse": {
+        "type": "object",
+        "properties": {
+          "approvalUser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submittedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "approvedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rejectedCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ExpenseIdResponse": {
+        "type": "object",
+        "properties": {
+          "expenseId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ExportGlobalTimeSheetResponse": {
+        "type": "object",
+        "properties": {
+          "globalTimesheetList": { }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.InsertTimeSheetAuditLogIdResponse": {
+        "type": "object",
+        "properties": {
+          "approvalTimeSheetLogId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.NotificationTbResponse": {
+        "type": "object",
+        "properties": {
+          "notificationsID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "fromDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "toDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "min": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.NotificationsTbIdResponse": {
+        "type": "object",
+        "properties": {
+          "notificationsId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectIdResponse": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectListResponse": {
+        "type": "object",
+        "properties": {
+          "listofProjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectMasterResponse"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.ProjectMasterResponse": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "projectCode": {
+            "type": "string"
+          },
+          "natureofIndustry": {
+            "type": "string"
+          },
+          "projectName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationIdResponse": {
+        "type": "object",
+        "properties": {
+          "registrationId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "registrationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "mobileno": {
+            "type": "string"
+          },
+          "emailId": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "assignToAdmin": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.RegistrationViewDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "employeeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "registrationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobileno": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailId": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthdate": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfJoining": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetDetailsIdResponse": {
+        "type": "object",
+        "properties": {
+          "timeSheetId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetDisplayViewResponse": {
+        "type": "object",
+        "properties": {
+          "approvalUser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submittedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "approvedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rejectedCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetMasterIdResponse": {
+        "type": "object",
+        "properties": {
+          "timeSheetMasterId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.TimeSheetMasterResponse": {
+        "type": "object",
+        "properties": {
+          "timeSheetMasterId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fromDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "totalHours": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeSheetStatus": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UserDateIsUsedResponse": {
+        "type": "object",
+        "properties": {
+          "timeSheetId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "daysofWeek": {
+            "type": "string",
+            "nullable": true
+          },
+          "hours": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "period": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "projectId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timeSheetMasterId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalHours": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UserDetailResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "mobileno": {
+            "type": "string"
+          },
+          "emailID": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "birthdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "rolename": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fusap.TimeSheet.Domain.TimeSheetAggregate.Response.UsersHoursNoCompleteResponse": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "ApiKey": {
+        "type": "apiKey",
+        "description": "Authorization header (please inform Bearer + your token)",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Fusap.TimeSheet.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "docs",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+      },
+      "applicationUrl": "https://localhost:5011;http://localhost:5010"
+    }
+  },
+  "Docker": {
+    "commandName": "Docker",
+    "launchBrowser": true,
+    "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/docs",
+    "environmentVariables": {
+      "ASPNETCORE_URLS": "http://+:80",
+      "ASPNETCORE_ENVIRONMENT": "Development"
+    },
+    "httpPort": 10000
+  }
+}

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\arq-lib-common-apiclient\src\Fusap.Common.ApiClient.Abstractions\Fusap.Common.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\arq-lib-common-swagger\src\Fusap.Common.Swagger\Fusap.Common.Swagger.csproj" />
+    <ProjectReference Include="..\Fusap.Common.Hosting\Fusap.Common.Hosting.csproj" />
+  </ItemGroup>
+
+</Project>

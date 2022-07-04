@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "SampleLogApp.Web [default log]": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+       "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "SampleLogApp.Web [online log]": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      "environmentVariables": {
+        "Serilog__WriteTo__1__Args__OutputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "SampleLogApp.Web [machine-readable log]": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Serilog__WriteTo__1__Args__Formatter": "Fusap.Common.Logger.FusapJsonLogFormatter, Fusap.Common.Logger"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "SampleLogApp.Web [kafka log]": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      "environmentVariables": {
+        "Serilog__WriteTo__2__Args__Formatter": "Fusap.Common.Logger.FusapJsonLogFormatter, Fusap.Common.Logger",
+        "Serilog__WriteTo__2__Name": "Kafka",
+        "Serilog__WriteTo__1__Args__restrictedToMinimumLevel": "Fatal",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "SampleLogApp.Web [kafka log ssl windows]": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      "environmentVariables": {
+        "Serilog__WriteTo__0__Args__sslCaLocation": "%temp%/ca-cert",
+        "Serilog__WriteTo__0__Args__bootstrapServers": "SSL://localhost:9092",
+        "Serilog__WriteTo__0__Args__securityProtocol": "1",
+        "Serilog__WriteTo__1__Args__restrictedToMinimumLevel": "Fatal",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    }
+  }
+}

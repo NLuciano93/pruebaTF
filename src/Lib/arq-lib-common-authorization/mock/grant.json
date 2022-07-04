@@ -1,0 +1,13 @@
+{
+	"request": {
+		"method": "POST",
+		"path": "/grant"
+	},
+	"response": {
+		"statusCode": 200,
+		"headers": {
+			"Content-Type":["application/json"]
+		},
+		"body": "[true,true,true,true,true,true,true,true,true,true,true,true]"
+	}
+}

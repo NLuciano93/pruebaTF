@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fusap.Common.Model.Presenter.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Fusap.Common.Model.Presenter.WebApi.ApiError">
+            <summary>
+            Indicates that an error happened while processing the request.
+            </summary>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiError.Code">
+            <summary>
+            The general error code.
+            </summary>
+            <example>ERR-CODE</example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiError.Id">
+            <summary>
+            The trace id for this operation.
+            </summary>
+            <example>75c0e295a3c74e888f800292f1abeea9</example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiError.Message">
+            <summary>
+            A general description of what happened.
+            </summary>
+            <example>General error message</example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiError.Errors">
+            <summary>
+            A detailed list of errors.
+            </summary>
+        </member>
+        <member name="T:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail">
+            <summary>
+            Indicates details about an error.
+            </summary>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail.ErrorCode">
+            <summary>
+            The specific error code.
+            </summary>
+            <example>ERR-CODE-XXX</example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail.Message">
+            <summary>
+            The specific error message.
+            </summary>
+            <example>Error message</example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail.Path">
+            <summary>
+            A path that further qualifies this issue.
+            </summary>
+            <example></example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail.Url">
+            <summary>
+            An url that further qualifies this issue.
+            </summary>
+            <example>https://example.com/errors/err-code-xxx</example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetail.Properties">
+            <summary>
+            A list of properties that can convey extra information to the caller.
+            </summary>
+        </member>
+        <member name="T:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetailProperty">
+            <summary>
+            A property that can convey extra information when an error happen.
+            </summary>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetailProperty.Key">
+            <summary>
+            The property key.
+            </summary>
+            <example></example>
+        </member>
+        <member name="P:Fusap.Common.Model.Presenter.WebApi.ApiErrorDetailProperty.Value">
+            <summary>
+            The property value.
+            </summary>
+            <example></example>
+        </member>
+    </members>
+</doc>

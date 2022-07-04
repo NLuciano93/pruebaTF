@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.25" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\arq-lib-common-authorization\src\Fusap.Authorization.WebApi\Fusap.Common.Authorization.WebApi.csproj" />
+    <ProjectReference Include="..\Lib\arq-lib-common-hosting\src\Fusap.Common.Hosting.WebApi\Fusap.Common.Hosting.WebApi.csproj" />
+    <ProjectReference Include="..\Lib\arq-lib-common-model-presenter\src\Fusap.Common.Model.Presenter.WebApi\Fusap.Common.Model.Presenter.WebApi.csproj" />
+    <ProjectReference Include="..\Application\Fusap.TimeSheet.Application.csproj" />
+    <ProjectReference Include="..\Data\Fusap.TimeSheet.Data.csproj" />
+    <ProjectReference Include="..\Domain\Fusap.TimeSheet.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

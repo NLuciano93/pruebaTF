@@ -1,0 +1,12 @@
+﻿# Error catalog
+
+
+| Code                           | Key                            | Message                                                      |
+|--------------------------------|--------------------------------|--------------------------------------------------------------|
+| Business                       | BusinessRuleViolated           | Business rules violated                                      |
+| Conflict                       | Conflict                       | There is a conflict                                          |
+| Not found                      | NotFound                       | Resource not found                                           |
+| Security                       | NotAuthorized                  | Access denied                                                |
+| Unexpected error               | UnexpectedError                | An unexpected error happened                                 |
+| Validation                     | Invalid                        | Invalid request                                              |
+

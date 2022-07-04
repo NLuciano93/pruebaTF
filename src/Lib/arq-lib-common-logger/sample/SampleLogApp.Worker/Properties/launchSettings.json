@@ -1,0 +1,17 @@
+﻿{
+  "profiles": {
+    "SampleLogApp.Worker [human-readable log]": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "SampleLogApp.Worker [machine-readable log]": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "serilog__machine-readable": "true"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08934787-AB67-49AE-B761-5BACCA9DFDC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F2A25B29-D1F8-4E96-BBE3-380401ABDF6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5033D830-D24C-4CAF-A4A0-D092B23B2944}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fusap.Common.Authorization.WebApi", "src\Fusap.Authorization.WebApi\Fusap.Common.Authorization.WebApi.csproj", "{FBDBDD0F-24C9-413B-A7BF-98D71111493B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Api", "samples\Sample.Api\Sample.Api.csproj", "{27B6A891-EBCE-4EE3-9AF0-0916AA115D3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fusap.Common.Authorization.Client", "src\Fusap.Authorization.Client\Fusap.Common.Authorization.Client.csproj", "{8286AA67-1E55-4092-8199-8E82D5200D13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{21E72C5D-A0E9-488E-B97F-C9FFEF3E09CD}"
+	ProjectSection(SolutionItems) = preProject
+		README.MD = README.MD
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusap.Common.Authorization.Client.Tests", "tests\Fusap.Common.Authorization.Client.Tests\Fusap.Common.Authorization.Client.Tests.csproj", "{E1EFF329-7A76-43BC-94FE-C55065871A85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBDBDD0F-24C9-413B-A7BF-98D71111493B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDBDD0F-24C9-413B-A7BF-98D71111493B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDBDD0F-24C9-413B-A7BF-98D71111493B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDBDD0F-24C9-413B-A7BF-98D71111493B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B6A891-EBCE-4EE3-9AF0-0916AA115D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B6A891-EBCE-4EE3-9AF0-0916AA115D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B6A891-EBCE-4EE3-9AF0-0916AA115D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B6A891-EBCE-4EE3-9AF0-0916AA115D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8286AA67-1E55-4092-8199-8E82D5200D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8286AA67-1E55-4092-8199-8E82D5200D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8286AA67-1E55-4092-8199-8E82D5200D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8286AA67-1E55-4092-8199-8E82D5200D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1EFF329-7A76-43BC-94FE-C55065871A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1EFF329-7A76-43BC-94FE-C55065871A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1EFF329-7A76-43BC-94FE-C55065871A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1EFF329-7A76-43BC-94FE-C55065871A85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBDBDD0F-24C9-413B-A7BF-98D71111493B} = {08934787-AB67-49AE-B761-5BACCA9DFDC0}
+		{27B6A891-EBCE-4EE3-9AF0-0916AA115D3D} = {5033D830-D24C-4CAF-A4A0-D092B23B2944}
+		{8286AA67-1E55-4092-8199-8E82D5200D13} = {08934787-AB67-49AE-B761-5BACCA9DFDC0}
+		{E1EFF329-7A76-43BC-94FE-C55065871A85} = {F2A25B29-D1F8-4E96-BBE3-380401ABDF6D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40643A2D-4938-467F-BEB9-0868EBF73E8D}
+	EndGlobalSection
+EndGlobal

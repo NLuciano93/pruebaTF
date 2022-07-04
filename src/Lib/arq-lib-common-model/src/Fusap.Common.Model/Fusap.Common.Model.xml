@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fusap.Common.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Fusap.Common.Model.IPagination`1">
+            <inheritdoc />
+        </member>
+        <member name="T:Fusap.Common.Model.IPagination`2">
+            <summary>
+            A paginated result.
+            </summary>
+            <typeparam name="TItem">The type of item to be paginated</typeparam>
+            <typeparam name="TNext">The type of token to represent the next page</typeparam>
+        </member>
+        <member name="P:Fusap.Common.Model.IPagination`2.Items">
+            <summary>
+            The items on this page.
+            </summary>
+        </member>
+        <member name="P:Fusap.Common.Model.IPagination`2.Next">
+            <summary>
+            Indicates the next page.
+            </summary>
+        </member>
+        <member name="P:Fusap.Common.Model.IPagination`2.EstimatedCount">
+            <summary>
+            Indicates an estimate of how many items are there in total. The value can be null if no estimate is available.
+            </summary>
+        </member>
+        <member name="T:Fusap.Common.Model.Pagination`1">
+            <inheritdoc cref="T:Fusap.Common.Model.IPagination`1" />
+        </member>
+        <member name="M:Fusap.Common.Model.Pagination`1.Empty">
+            <summary>
+            Creates an empty pagination.
+            </summary>
+        </member>
+        <member name="T:Fusap.Common.Model.Pagination`2">
+            <inheritdoc cref="T:Fusap.Common.Model.IPagination`2" />
+        </member>
+        <member name="M:Fusap.Common.Model.Pagination`2.Empty">
+            <summary>
+            Creates an empty pagination.
+            </summary>
+        </member>
+    </members>
+</doc>

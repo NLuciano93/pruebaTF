@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Commands\**" />
+    <Compile Remove="Queries\**" />
+    <EmbeddedResource Remove="Commands\**" />
+    <EmbeddedResource Remove="Queries\**" />
+    <None Remove="Commands\**" />
+    <None Remove="Queries\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="NotificationDbContext.cs" />
+    <Compile Remove="NotificationDbContextUnitOfWork.cs" />
+    <Compile Remove="NotificationEventsDbContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\arq-lib-common-data\src\Fusap.Common.Data\Fusap.Common.Data.csproj" />
+    <ProjectReference Include="..\Lib\arq-lib-common-data\src\Fusap.Common.SqlServer\Fusap.Common.SqlServer.csproj" />
+    <ProjectReference Include="..\Domain\Fusap.TimeSheet.Domain.csproj" />
+    <ProjectReference Include="..\Lib\arq-lib-common-model\src\Fusap.Common.Model\Fusap.Common.Model.csproj" />
+  </ItemGroup>
+
+</Project>

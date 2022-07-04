@@ -1,0 +1,14 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Fusap.Authorization.Sample.Api": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "launchUrl": "token/7bd091c6-5902-4a01-8251-aa2c17b985ee",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
